@@ -1,0 +1,197 @@
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.property-card {
+  background: transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(128, 44, 245, 0.5);
+  transition: 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+.property-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.property-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+  border-radius: 16px;
+}
+
+.property-card:hover .property-img {
+  transform: scale(1.05);
+}
+
+/* Overlay container at bottom of image */
+.overlay-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(19, 15, 42, 0.85) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-radius: 0 0 16px 16px;
+}
+
+/* Title on overlay */
+.property-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Button on overlay */
+.know-more-btn {
+  align-self: start;
+  padding: 0.5rem 1.2rem;
+  background: rgba(103, 81, 185, 0.85);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(103, 81, 185, 0.5);
+}
+
+.know-more-btn:hover {
+  background-color: rgba(103, 81, 185, 1);
+}
+
+/* Domain cards (tabs) */
+.domain-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.domain-card {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #6751b9;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.domain-card.active,
+.domain-card:hover {
+  background: #6751b9;
+  color: #ffffff;
+}
+
+/* Modal styles unchanged */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1a162b;
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 0 20px rgba(103, 81, 185, 0.8);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.8rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ff4d4f;
+}
+
+.modal-description p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.modal-gallery {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.modal-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(103, 81, 185, 0.3);
+}
+
+.modal-links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.modal-links a {
+  padding: 0.6rem 1rem;
+  background: #6751b9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.modal-links a:hover {
+  background: #7a66e3;
+}

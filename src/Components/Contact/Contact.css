@@ -1,0 +1,74 @@
+.contact-container {
+  margin: 4rem 0;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.contact-container h5 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #fff;
+}
+
+.contact-content {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Flex children */
+.contact-left,
+.contact-right {
+  flex: 1;
+}
+
+/* ========== Responsive Media Queries ========== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .contact-container h5 {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-content {
+    gap: 2rem;
+  }
+}
+
+/* Mobile Landscape and Small Tablets */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+
+  .contact-container h5 {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Mobile Portrait (395x655 and below) */
+@media (max-width: 420px) {
+  .contact-container {
+    padding: 0 1rem;
+  }
+
+  .contact-container h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-content {
+    gap: 1.5rem;
+  }
+}
