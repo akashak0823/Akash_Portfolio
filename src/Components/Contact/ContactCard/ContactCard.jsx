@@ -1,22 +1,17 @@
 import React from 'react';
-import "./ContactCard.css";
+import './ContactCard.css';
 
-const ContactCard = ({ iconUrl, text, link }) => {
+const ContactCard = ({ icon, text, link }) => {
   return (
-    <div className="contact-details-card">
-      <div className='icon'>
-        <img src={iconUrl} alt={text} />
-      </div>
-      <p>
-        {link ? (
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            {text}
-          </a>
-        ) : (
-          text
-        )}
-      </p>
-    </div>
+    <a
+      href={link}
+      className="contact-card"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div className="contact-icon">{icon}</div>
+      <p>{text}</p>
+    </a>
   );
 };
 
