@@ -4,6 +4,13 @@ import Typewriter from 'typewriter-effect';
 import './Hero.css';
 
 const Hero = () => {
+  const handleScrollToContact = () => {
+    const contactSection = document.getElementById('Contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="hero-section" id="hero">
       <div className="hero-wrapper">
@@ -40,11 +47,15 @@ const Hero = () => {
           </p>
 
           <div className="hero-buttons">
-            <a href="#contact">
-              <motion.button whileHover={{ scale: 1.1 }} className="hero-btn filled">
-                Let’s Collaborate
-              </motion.button>
-            </a>
+            {/* Changed from <a> to <button> for better control */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              className="hero-btn filled"
+              onClick={handleScrollToContact}
+            >
+              Let’s Collaborate
+            </motion.button>
+
             <a href="/Assets/Akash_Resume.pdf" download>
               <motion.button whileHover={{ scale: 1.1 }} className="hero-btn outline">
                 Get Resume
