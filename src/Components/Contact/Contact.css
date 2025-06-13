@@ -1,7 +1,9 @@
+/* === Main Container === */
 .contact-container {
   margin: 4rem 0;
-  position: relative;
   padding: 0 2rem;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
 }
 
 .contact-container h5 {
@@ -9,25 +11,28 @@
   font-weight: 600;
   margin-bottom: 3rem;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
+  position: relative;
 }
 
+/* === Content Grid === */
 .contact-content {
   display: flex;
-  gap: 3rem;
   justify-content: center;
   align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
-/* Flex children */
 .contact-left,
 .contact-right {
   flex: 1;
+  min-width: 300px;
 }
 
-/* ========== Responsive Media Queries ========== */
+/* === Animations added via framer-motion in JSX === */
 
-/* Tablets */
+/* === Responsive Media Queries === */
 @media (max-width: 1024px) {
   .contact-container h5 {
     font-size: 1.5rem;
@@ -39,7 +44,6 @@
   }
 }
 
-/* Mobile Landscape and Small Tablets */
 @media (max-width: 768px) {
   .contact-content {
     flex-direction: column;
@@ -57,7 +61,6 @@
   }
 }
 
-/* Mobile Portrait (395x655 and below) */
 @media (max-width: 420px) {
   .contact-container {
     padding: 0 1rem;
