@@ -1,6 +1,8 @@
 .experience-container {
   margin: 4rem 0;
   position: relative;
+  padding: 0 2rem;
+  overflow: hidden;
 }
 
 .experience-container h5 {
@@ -9,6 +11,16 @@
   margin-bottom: 3rem;
   text-align: center;
   color: #ffffff;
+  
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 5px #a892fe;
+  }
+  to {
+    text-shadow: 0 0 15px #8064e8, 0 0 25px #a892fe;
+  }
 }
 
 .experience-content {
@@ -31,42 +43,42 @@
   transform: translateY(-50%);
   z-index: 2;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .arrow:hover {
   background: #6751b9;
   color: #fff;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .arrow-left {
-  left: 0;
+  left: -1rem;
 }
 
 .arrow-right {
-  right: 0;
+  right: -1rem;
 }
 
+/* Slider Item Card Wrapper */
+.slick-slide {
+  padding: 0 0.5rem;
+}
 
-@media (max-width: 420px) {
+/* Media Queries */
+@media (max-width: 768px) {
   .experience-container {
-    margin: 2rem 0;
+    margin: 2.5rem 0;
   }
 
   .experience-container h5 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
-  }
-
-  .experience-content {
-    padding: 0 1rem;
   }
 
   .arrow {
     width: 2rem;
     height: 2rem;
-    font-size: 1rem;
-    top: 45%;
   }
 
   .arrow-left {
@@ -75,5 +87,34 @@
 
   .arrow-right {
     right: -0.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .experience-container {
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+
+  .experience-container h5 {
+    font-size: 1.3rem;
+  }
+
+  .experience-content {
+    padding: 0 0.5rem;
+  }
+
+  .arrow {
+    width: 1.8rem;
+    height: 1.8rem;
+    top: 45%;
+  }
+
+  .arrow-left {
+    left: -0.3rem;
+  }
+
+  .arrow-right {
+    right: -0.3rem;
   }
 }
