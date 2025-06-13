@@ -3,7 +3,8 @@ import './Work Experiences.css';
 import { WORK_EXPERIENCES } from '../../utils/data.js';
 import ExperienceCard from './ExperienceCard/ExperienceCard';
 import Slider from 'react-slick';
-import { ArrowLeft, ArrowRight } from 'lucide-react'; 
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const WorkExperience = () => {
   const slideRef = useRef();
@@ -34,21 +35,50 @@ const WorkExperience = () => {
 
   return (
     <section className='experience-container' id='work-experience'>
-      <h5>Work Experience</h5>
-      <div className='experience-content'>
-        <div className='arrow arrow-left' onClick={slideLeft}>
-          <ArrowLeft size={28} />
-        </div>
-        <div className='arrow arrow-right' onClick={slideRight}>
-          <ArrowRight size={28} />
-        </div>
+      <motion.h5
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        Work Experience
+      </motion.h5>
+
+      <motion.div
+        className='experience-content'
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <motion.div
+          className='arrow arrow-left'
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
+          onClick={slideLeft}
+        >
+          <ArrowLeft size={24} />
+        </motion.div>
+
+        <motion.div
+          className='arrow arrow-right'
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
+          onClick={slideRight}
+        >
+          <ArrowRight size={24} />
+        </motion.div>
 
         <Slider ref={slideRef} {...settings}>
           {WORK_EXPERIENCES.map((item, index) => (
-            <ExperienceCard key={index} details={item} />
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: 'spring', stiffness: 200 }}
+            >
+              <ExperienceCard details={item} />
+            </motion.div>
           ))}
         </Slider>
-      </div>
+      </motion.div>
     </section>
   );
 };
